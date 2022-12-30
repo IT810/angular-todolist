@@ -1,0 +1,173 @@
+.container {
+    margin: 20px auto;
+}
+
+h1{
+    padding-top: 20px;
+    text-align: center;
+}
+
+h2{
+    color: #f44336;
+    text-align: center;
+}
+
+.form {
+    background-color: rgb(248, 178, 178);
+    border-radius: 6px ;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.form-action{
+    background-color: rgb(248, 178, 178);
+    border-radius: 6px ;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    margin-top: 20px;
+}
+
+.input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    flex: 1;
+}
+
+.input:focus,
+.add:focus {
+    outline: none;
+}
+
+.add {
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.add:hover{
+    background-color: dodgerblue;
+}
+
+.tasks {
+    background-color: rgb(248, 178, 178);
+    margin-top: 20px;
+    border-radius: 6px;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+.tasks .task {
+    background-color: white;
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.tasks .task:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.tasks .task:hover {
+    background-color: #f7f7f7;
+}
+
+.tasks .task.done {
+    opacity: 0.5;
+    position: relative;
+}
+
+.content{
+    display: inline-block;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+.task.done::after {
+    position: absolute;
+    content: "";
+}
+
+.tasks .task span {
+    font-weight: bold;
+    font-size: 12px;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: crimson;
+}
+
+.tasks .task span:hover{
+    font-size: 13px;
+    background-color: firebrick;
+}
+
+.delete-all {
+    width: calc(100% - 25px);
+    margin: auto;
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    background-color: tomato;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.delete-all:hover{
+    background-color: #f44336;
+}
+
+.img{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    min-height: 400px;
+}
+
+b{
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+img{
+    height: 80%;
+    width: 50%;
+}
+
+.task-new{
+    background-color: cornsilk !important;
+    border: 1px solid brown;
+}
+
+.task-done{
+    background-color: lightgreen !important;
+    border: 1px solid seashell;
+}
+
+.list{
+    min-height: 400px;
+}

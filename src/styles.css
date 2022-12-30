@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    max-height: 100vh;
+    background-image: url('https://i.pinimg.com/originals/a1/20/65/a120653f2795e2de903c4e2e33d241e7.jpg');
+}
+
+/* For mobile phones: */
+@media only screen and (min-width: 200px) {
+
+    .container {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+
+    /* For tablets: */
+    .container {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+
+    /* For desktop: */
+    .container {
+        width: 40%;
+    }
+}

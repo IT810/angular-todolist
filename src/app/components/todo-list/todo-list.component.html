@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>TODO-LIST App</h1>
+  <h2>[Angular]</h2>
+  <div class="form">
+    <input type="text" class="input" [(ngModel)]="content" placeholder="Enten your task..." />
+    <input type="submit" class="add" value="Add Task" (click)="submit()" />
+  </div>
+  <div class="form-action">
+    <div class="delete-all" (click)="deleteAll()">Delete all</div>
+  </div>
+  <div class="tasks">
+    <div *ngIf="tasks.length > 0" class="list">
+      <div class="task" [ngClass]="{'task-new': t.status, 'task-done': !t.status}" *ngFor="let t of tasks" [id]="t.id" (click)="doneTask(t.id)">
+        <div class="content">{{t.content}}</div>
+        <span class="del" (click)="deleteItemById(t.id)">Delete</span>
+      </div>
+    </div>
+    <div *ngIf="tasks.length <= 0" class="img">
+      <img src="https://cdni.iconscout.com/illustration/premium/thumb/content-writing-6333619-5230179.png" />
+      <b>Sorry, not data found !!!</b>
+    </div>
+  </div>
+</div>
