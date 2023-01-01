@@ -1,4 +1,10 @@
-# AngularTodolist
+# [Angular] Todolist App
+## Author
+
+Hung Nguyen
+
+## Demo
+![image](https://user-images.githubusercontent.com/55732539/210103354-09b0c471-bf27-41ab-8231-64a636217558.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.8.
 
