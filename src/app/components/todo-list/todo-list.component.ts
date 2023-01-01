@@ -10,10 +10,18 @@ import { v4 as uuid } from 'uuid';
 export class TodoListComponent implements OnInit {
 
   tasks: Task[] = [];
+  all: Task[] = [];
   content: string = "";
+  tab: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  loading(){
+    this.tab = !this.tab;
+    this.tasks = this.all.filter(x => x.status === this.tab);
   }
 
   submit() 
@@ -26,7 +34,8 @@ export class TodoListComponent implements OnInit {
         status: true
       };
 
-      this.tasks.unshift(task); 
+      this.tasks.unshift(task);
+      this.tasks = this.all;
       this.content = "";
     }
   }

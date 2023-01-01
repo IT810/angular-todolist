@@ -1,29 +1,29 @@
 .container {
-    margin: 20px auto;
+    margin: 10px auto;
 }
 
-h1{
-    padding-top: 20px;
+h1 {
+    padding-top: 10px;
     text-align: center;
 }
 
-h2{
+h2 {
     color: #f44336;
     text-align: center;
 }
 
 .form {
     background-color: rgb(248, 178, 178);
-    border-radius: 6px ;
+    border-radius: 6px;
     padding: 20px;
     display: flex;
     align-items: center;
     border: 2px solid black;
 }
 
-.form-action{
+.form-action {
     background-color: rgb(248, 178, 178);
-    border-radius: 6px ;
+    border-radius: 6px;
     padding: 20px;
     display: flex;
     align-items: center;
@@ -54,7 +54,7 @@ h2{
     font-weight: bold;
 }
 
-.add:hover{
+.add:hover {
     background-color: dodgerblue;
 }
 
@@ -91,7 +91,7 @@ h2{
     position: relative;
 }
 
-.content{
+.content {
     display: inline-block;
     width: 180px;
     white-space: nowrap;
@@ -116,7 +116,7 @@ h2{
     background-color: crimson;
 }
 
-.tasks .task span:hover{
+.tasks .task span:hover {
     font-size: 13px;
     background-color: firebrick;
 }
@@ -134,11 +134,11 @@ h2{
     font-weight: bold;
 }
 
-.delete-all:hover{
+.delete-all:hover {
     background-color: #f44336;
 }
 
-.img{
+.img {
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -147,27 +147,85 @@ h2{
     min-height: 400px;
 }
 
-b{
+b {
     width: 100%;
     text-align: center;
     padding: 20px;
 }
 
-img{
+img {
     height: 80%;
     width: 50%;
 }
 
-.task-new{
+.task-new {
     background-color: cornsilk !important;
     border: 1px solid brown;
 }
 
-.task-done{
+.task-done {
     background-color: lightgreen !important;
     border: 1px solid seashell;
 }
 
-.list{
+.list {
     min-height: 400px;
+}
+
+.tab {
+    overflow: hidden;
+    background-color: #00000020;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.tab button {
+    width: 50%;
+    background-color: #dddddd00;
+    border-radius: 10px;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 22px;
+    transition: 0.3s;
+    font-size: 17px;
+    margin: 5px 5px 5px 5px;
+
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    /*   background-color: #f9f9f920; */
+    color: #fff;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #4158D0;
+    color: #ffffff;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: block !important;
+    color: #273342;
+    padding: 6px 6px;
+    border: 1px solid #dddddd40;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.hide{
+    display: none;
 }

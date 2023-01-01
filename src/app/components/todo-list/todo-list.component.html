@@ -9,15 +9,37 @@
     <div class="delete-all" (click)="deleteAll()">Delete all</div>
   </div>
   <div class="tasks">
-    <div *ngIf="tasks.length > 0" class="list">
-      <div class="task" [ngClass]="{'task-new': t.status, 'task-done': !t.status}" *ngFor="let t of tasks" [id]="t.id" (click)="doneTask(t.id)">
-        <div class="content">{{t.content}}</div>
-        <span class="del" (click)="deleteItemById(t.id)">Delete</span>
+    <div class="tab">
+      <button class="tablinks" [ngClass]="{'active':tab===true}" (click)="loading()">To do</button>
+      <button class="tablinks" [ngClass]="{'active':tab===false}" (click)="loading()">Done</button>
+    </div>
+    <p style="text-align: center;" *ngIf="tasks.length > 0">There are all {{tasks.length}} tasks</p>
+    <div [ngClass]="{'tabcontent':tab===true}" class="hide">
+      <div *ngIf="tasks.length > 0" class="list">
+        <div class="task" [ngClass]="{'task-new': t.status, 'task-done': !t.status}" *ngFor="let t of tasks" [id]="t.id"
+          (click)="doneTask(t.id)">
+          <div class="content">{{t.content}}</div>
+          <span class="del" (click)="deleteItemById(t.id)">Delete</span>
+        </div>
+      </div>
+      <div *ngIf="tasks.length <= 0" class="img">
+        <img src="https://cdni.iconscout.com/illustration/premium/thumb/content-writing-6333619-5230179.png" />
+        <b>Sorry, no task to do !!!</b>
       </div>
     </div>
-    <div *ngIf="tasks.length <= 0" class="img">
-      <img src="https://cdni.iconscout.com/illustration/premium/thumb/content-writing-6333619-5230179.png" />
-      <b>Sorry, not data found !!!</b>
+    <div [ngClass]="{'tabcontent':tab===false}" class="hide">
+      <div *ngIf="tasks.length > 0" class="list">
+        <div class="task" [ngClass]="{'task-new': t.status, 'task-done': !t.status}" *ngFor="let t of tasks" [id]="t.id"
+          (click)="doneTask(t.id)">
+          <div class="content">{{t.content}}</div>
+          <span class="del" (click)="deleteItemById(t.id)">Delete</span>
+        </div>
+      </div>
+      <div *ngIf="tasks.length <= 0" class="img">
+        <img
+          src="https://cdni.iconscout.com/illustration/premium/thumb/girl-working-on-content-writing-5691581-4759513.png" />
+        <b>Sorry, no task is done !!!</b>
+      </div>
     </div>
   </div>
 </div>
