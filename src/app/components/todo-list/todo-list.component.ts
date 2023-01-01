@@ -10,18 +10,14 @@ import { v4 as uuid } from 'uuid';
 export class TodoListComponent implements OnInit {
 
   tasks: Task[] = [];
-  all: Task[] = [];
+  todo: Task[] = [];
+  done: Task[] = [];
   content: string = "";
   tab: boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  loading(){
-    this.tab = !this.tab;
-    this.tasks = this.all.filter(x => x.status === this.tab);
   }
 
   submit() 
@@ -35,7 +31,8 @@ export class TodoListComponent implements OnInit {
       };
 
       this.tasks.unshift(task);
-      this.tasks = this.all;
+      this.todo = this.tasks.filter(x => x.status === true);
+      this.done = this.tasks.filter(x => x.status === false);
       this.content = "";
     }
   }
@@ -52,11 +49,15 @@ export class TodoListComponent implements OnInit {
     if(task !== undefined){
       task.status = !task.status;
     }
+    this.todo = this.tasks.filter(x => x.status === true);
+    this.done = this.tasks.filter(x => x.status === false);
   }
 
   deleteAll()
   {
-    this.tasks = [];
+    this.tasks = this.tasks.filter(x => x.status === false);
+    this.todo = this.tasks.filter(x => x.status === true);
+    this.done = this.tasks.filter(x => x.status === false);
   }
 
 }

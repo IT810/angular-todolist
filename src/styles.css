@@ -1,6 +1,7 @@
 body {
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url('https://i.pinimg.com/originals/a1/20/65/a120653f2795e2de903c4e2e33d241e7.jpg');
+    background-image: url('assets/background.jpg');
 }
 
 /* For mobile phones: */
@@ -8,6 +9,10 @@ body {
 
     .container {
         width: 95%;
+    }
+
+    .footer{
+        margin-top:30%;
     }
 }
 
@@ -17,6 +22,10 @@ body {
     .container {
         width: 80%;
     }
+
+    .footer{
+        margin-top:20%;
+    }
 }
 
 @media only screen and (min-width: 1025px) {
@@ -24,5 +33,9 @@ body {
     /* For desktop: */
     .container {
         width: 40%;
+    }
+
+    .footer{
+        margin-top:10%;
     }
 }

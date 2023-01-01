@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>TODO-LIST App</h1>
+  <h1>TODO-LIST APP</h1>
   <h2>[Angular]</h2>
   <div class="form">
     <input type="text" class="input" [(ngModel)]="content" placeholder="Enten your task..." />
@@ -10,36 +10,46 @@
   </div>
   <div class="tasks">
     <div class="tab">
-      <button class="tablinks" [ngClass]="{'active':tab===true}" (click)="loading()">To do</button>
-      <button class="tablinks" [ngClass]="{'active':tab===false}" (click)="loading()">Done</button>
+      <button class="tablinks" [ngClass]="{'active':tab===true}" (click)="tab = true">To do</button>
+      <button class="tablinks" [ngClass]="{'active':tab===false}" (click)="tab = false">Done</button>
     </div>
-    <p style="text-align: center;" *ngIf="tasks.length > 0">There are all {{tasks.length}} tasks</p>
     <div [ngClass]="{'tabcontent':tab===true}" class="hide">
-      <div *ngIf="tasks.length > 0" class="list">
-        <div class="task" [ngClass]="{'task-new': t.status, 'task-done': !t.status}" *ngFor="let t of tasks" [id]="t.id"
+      <p style="text-align: center;" *ngIf="todo.length > 0">There are all {{todo.length}} tasks</p>
+      <div *ngIf="todo.length > 0" class="list">
+        <div class="task" [ngClass]="{'task-new': t.status, 'task-done': !t.status}" *ngFor="let t of todo" [id]="t.id"
           (click)="doneTask(t.id)">
           <div class="content">{{t.content}}</div>
           <span class="del" (click)="deleteItemById(t.id)">Delete</span>
         </div>
       </div>
-      <div *ngIf="tasks.length <= 0" class="img">
-        <img src="https://cdni.iconscout.com/illustration/premium/thumb/content-writing-6333619-5230179.png" />
+      <div *ngIf="todo.length <= 0" class="img">
+        <img src="assets/todo-empty.png" />
         <b>Sorry, no task to do !!!</b>
       </div>
     </div>
     <div [ngClass]="{'tabcontent':tab===false}" class="hide">
-      <div *ngIf="tasks.length > 0" class="list">
-        <div class="task" [ngClass]="{'task-new': t.status, 'task-done': !t.status}" *ngFor="let t of tasks" [id]="t.id"
+      <p style="text-align: center;" *ngIf="done.length > 0">There are all {{done.length}} tasks</p>
+      <div *ngIf="done.length > 0" class="list">
+        <div class="task" [ngClass]="{'task-new': t.status, 'task-done': !t.status}" *ngFor="let t of done" [id]="t.id"
           (click)="doneTask(t.id)">
           <div class="content">{{t.content}}</div>
           <span class="del" (click)="deleteItemById(t.id)">Delete</span>
         </div>
       </div>
-      <div *ngIf="tasks.length <= 0" class="img">
+      <div *ngIf="done.length <= 0" class="img">
         <img
-          src="https://cdni.iconscout.com/illustration/premium/thumb/girl-working-on-content-writing-5691581-4759513.png" />
-        <b>Sorry, no task is done !!!</b>
+          src="assets/done-empty.png" />
+        <b>Sorry, no task finished !!!</b>
       </div>
     </div>
   </div>
 </div>
+<footer class="footer" >
+	<div class="waves">
+		<div class="wave" id="wave1"></div>
+		<div class="wave" id="wave2"></div>
+		<div class="wave" id="wave3"></div>
+		<div class="wave" id="wave4"></div>
+	</div>
+	<p style="opacity: 0.75;">Made with 🤍 by Hung Nguyen</p>
+</footer>
